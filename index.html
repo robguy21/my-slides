@@ -49,6 +49,10 @@
 	  -webkit-background-clip: text;
 	  background-clip: text;
 	}
+
+	code {
+		font-size: 18px;
+	}
 </style>
 	<header class="caption">
 		<h1>ECMAScript</h1>
@@ -91,18 +95,18 @@
 				JavaScript was first created 1995 in { <span class="next rob-yellow">10</span> } days by { <span class="next rob-yellow">Brendan Eich</span>  }.
 			</li>
 			<li>
-				Which popular browser at the time was the main driving force behind javascript?
-			</li>
-			<li class="next rob-yellow">
-				Netscape
+				Which popular browser at the time was the main driving force behind javascript? { <span class="next rob-yellow">Netscape</span> }
 			</li>
 			<li>
-				Javascript finally saw some standardization in { <span class="next rob-yellow">1997</span> } from ECMA with the release of ECMAScript 1.0
+				What year did Javascript officially become standardized? { <span class="next rob-yellow">1997</span> }
 				<span class="smaller-list-item">It's called ECMAScript because Javascript was trademarked and apparently the alternatives were shit.</span>
 			</li>
 			<li>
-				ECMAScript 2 was finally released in { <span>1998</span> } to standardize ECMA with ISO.
-				<span class="smaller-list-item">ES2 still didn't ship with exceptions, this meant the interpreter was left to handle any and all errors.</span>
+				Which organization was responsible for standardizing Javascript? { <span class="next rob-yellow">ECMA</span> }
+			</li>
+			<li>
+				What year did ES2 released? { <span class="next rob-yellow">1998</span> }
+				<span class="smaller-list-item"> fun fact - ES2 still didn't ship with exceptions, this meant the interpreter was left to handle any and all errors.</span>
 			</li>
 		</ol>
 	</section>
@@ -139,9 +143,9 @@
 	<section class="slide">
 		<h2>ECMAScript - 4 - The fuckit days.</h2>
 		<p class="">
-			After years of not being able to agree on the feature-set for ES4, interest was resparked in { <span class="next rob-yellow">2005</span> } ( the greatness of AJAX had been realised and interested sparked again )
+			What year was interest resparked in ES4? { <span class="next rob-yellow">2005</span> } ( the greatness of AJAX had been realised and interest sparked again )
 			<br>
-			The ECMA committee gathered once more. Representatives from 4 major companies ({ <span class="next rob-yellow"> Adobe, Mozilla, Opera, and Microsoft</span> }) set about agreeing on the feature set for ES4.
+			Which 4 major companies sent representatives to discuss the feature set for ES4? ({ <span class="next rob-yellow"> Adobe, Mozilla, Opera, and Microsoft</span> }).
 			<br>
 			<style>
 				.small-list {
@@ -181,24 +185,18 @@
 	<section class="slide">
 		<h2><span class="rainbow">Fun with Javascript!!!</span></h2>
 		<p>
-			Result ({  <span class="next rob-yellow">TypeError: Cannot call method 'hello' of undefined</span> })
+			Result ({  <span class="next rob-yellow">0</span> })
 		</p>
 		<pre>
 			<code>
-			function Person(name) {
-				this.name = name;
-			}
+				// Outputs NaN
+				console.log(Math.min('null', 1234));
 
-			Person.prototype.hello = function() {
-				return "Hello " + this.name;
-			}
+				// Outputs 1
+				console.log(Math.min('1', 1234));
 
-			var me = new Person("Joe");
-			me.hello()
-			> "Hello Joe"
-
-			var other = Person("Mark");
-			other.hello(); // result
+				console.log(Math.min(null, 1234));
+				// Outputs ???
 			</code>
 		</pre>
 	</section>
@@ -206,23 +204,37 @@
 	<section class="slide">
 		<h2>ECMAScript - 4 - The fuckit days ( continued ).</h2>
 		<p class="">
-			With the feature set ready enter our hero - Douglas Crockford, the representative from ({ <span class="next rob-yellow">Yahoo</span> }).
+			With the feature set - ready enter our hero - { <span class="next rob-yellow">Douglas Crockford</span> }, the representative from ({ <span class="next rob-yellow">Yahoo</span> }).
+			*Hint: Rob mentioned him twice this morning, and mentioned the company once.
 			<br>
-			He came out gunning calling the features as essentially bullshit and trying to expand the language too quickly too early. Behind the scenes the ({ <span class="next rob-yellow">Microsoft</span> }) agreed with him but couldn't say anything outright as his company would get flamed for being anti-competitive behaviour ( which would've been totally valid at the time ).
+			From which company was the representative that wanted to side with Douglas but couldn't? ({ <span class="next rob-yellow">Microsoft</span> })
+			<br>
+			*Hint: Representative agreed with him but couldn't say anything outright as his company would get flamed for being anti-competitive ( which would've been totally valid at the time ).
 			<br>
 		</p>
-		<p class="next">
-			After being convinced by Crockford, Microsoft began aggressively disagreeing with the design choices. Stating that they would refuse to implement the new feature set in their browsers.
-			<br>
-			Microsoft threatened legal action if the draft was finalized in it's current state. This led to two different drafts being prepared - ES3.1 ( backed by Crockford and Microsoft ) and ES4 ( pretty much backed by everyone who was left disagreeing with Crockford and Microsoft )
-		</p>
-
 	</section>
 
 	<section class="slide">
 		<h2>ECMAScript - 4</h2>
 		<p class="next">
 			After ({ <span class="next rob-yellow">8</span> }) years, the ES4 proposal was officially scrapped as it took far too long the complicated feature set.
+		</p>
+	</section>
+
+
+	<section class="slide">
+		<h2>ECMAScript - 4</h2>
+		<p class="next">
+			What year was ES4 Officially released? ({ <span class="next rob-yellow">Never</span> }).
+		</p>
+		<p class="next">
+			What year was ES5 Officially released? ({ <span class="next rob-yellow">2009</span> }).
+		</p>
+		<p class="next">
+			What year was ES6 Officially released? ({ <span class="next rob-yellow">2015</span> }).
+		</p>
+		<p class="next">
+			ES Harmony is a term often used, what could it mean? ({ <span class="next rob-yellow">ES Harmany was the middleground between 3.1 and 4</span> }).
 		</p>
 	</section>
 
@@ -262,6 +274,55 @@
 				}
 
 				myFunction();
+			</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2><span class="rainbow">Fun with Javascript!!!</span></h2>
+		<div>
+			Result ({  <span class="next rob-yellow">pure awesomeness.</span> }) <span class="next">NOT... what is wrong in the below code?</span>
+		</div>
+		<div class="next">Correct! Object.assign is mutating array. Boom bitches.</div>
+		<pre>
+			<code>
+				// a lesson in immutable arrays
+				const array = ['Rob', 'Alcino', 'Chris', 'Siya', 'Barak', 'Gianluca'];
+
+				// now to add someone without mutating array
+				const index = 5; // where index that you want to mod
+
+				// Option One
+				const nextArray = [
+					...array.slice(0, index),
+					['Luca'],
+					...array.slice(index + 1),
+				]; // siya dislikes this option
+
+				// Option Two
+				const nextArrayV2 = Object.assign(array, {[index]: 'Gian'})
+			</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2><span class="rainbow">Fun with Javascript!!!</span></h2>
+		<div class="next">Answer to 1 : <span class="next rob-yellow">REDUCE</span> </span>
+		<span class="next">Answer to 2 : <span class="next rob-yellow">FILTER</span> </span>
+		<span class="next">Answer to 3 : <span class="next rob-yellow">REDUCE</span> </span>
+		</div>
+		<pre>
+			<code>
+				/*
+					Given the array methods Array.protoype.map | Array.prototype.filter | Array.prototype.reduce
+					Which one's should be used in each example below?
+				*/
+
+				// Given: An initial Array
+				// 1: You need to flatten a nested array
+				// 2: You need to return a new array that only contains strings longer than 5
+				// 3: You need to return a string that contains a JSON.stringify'd version
+					// of all the items
 			</code>
 		</pre>
 	</section>
@@ -307,7 +368,6 @@
 
 	<div class="progress"></div>
 
-	<script src="node_modules/shower-core/shower.min.js"></script>
 	<script src="node_modules/shower-core/shower.min.js"></script>
 	<script src="node_modules/prismjs/prism.js"></script>
 	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
