@@ -6,143 +6,331 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="node_modules/prismjs/themes/prism-okaidia.css">
 </head>
-<body class="shower list">
+<body class="shower list language-javascript">
+
+<style>
+	.slide {
+		padding-top: 1rem;
+	}
+
+	.rob-yellow {
+		color: #FBC02D;
+	}
+
+	.inline-code {
+		padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    white-space: nowrap;
+    border-radius: 4px;
+	}
+
+	.slide pre code {
+    display: block;
+    margin-left: -100px;
+    padding: 1rem;
+    border-radius: 0;
+    background: 0 0;
+    line-height: 1.2;
+    white-space: pre;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 2;
+    margin-top: -75px;
+	}
+
+	.rainbow {
+	  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+	  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+	  color:transparent;
+	  -webkit-background-clip: text;
+	  background-clip: text;
+	}
+
+	code {
+		font-size: 18px;
+	}
+</style>
 	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
+		<h1>ECMAScript</h1>
+		<p>Brought to you by <a href="http://github.com/robguy21">Rob Crous</a></p>
 	</header>
-	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<img src="pictures/cover.jpg" alt="" class="cover">
-		<!--
-			To apply styles to the certain slides
-			set slide ID to get needed elements
-			-->
+
+	<section class="slide rob_slide" id="cover">
+		<h2 class="rob_header">ECMAScript</h2>
+		<p class="rob_header-subtitle">Commonly known as Javascript</p>
+		<figure>
+			<img class="cover" src="pictures/1st.jpg" alt="Hands on the orange typewriter in a park">
+			<figcaption class="white">
+				<a href="http://fiftyfootshadows.net/">© John Carey</a>
+			</figcaption>
+		</figure>
 		<style>
 			#cover h2 {
+				color: #333;
 				margin:30px 0 0;
-				color:#FFF;
 				text-align:center;
 				font-size:70px;
 				}
 			#cover p {
+				color: #333;
+				font-size: 12px;
+				font-style: normal;
 				margin:10px 0 0;
 				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
+			}
 				#cover p a {
 					color:#FFF;
 					}
 		</style>
 	</section>
+
 	<section class="slide">
-		<h2>Shower key features</h2>
-		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</section>
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
+		<h2>A brief history</h2>
+		<ol class="next">
+			<li>
+				JavaScript was first created 1995 in { <span class="next rob-yellow">10</span> } days by { <span class="next rob-yellow">Brendan Eich</span>  }.
 			</li>
-			<li>Look, seven rows exactly!</li>
+			<li>
+				Which popular browser at the time was the main driving force behind javascript? { <span class="next rob-yellow">Netscape</span> }
+			</li>
+			<li>
+				What year did Javascript officially become standardized? { <span class="next rob-yellow">1997</span> }
+				<span class="smaller-list-item">It's called ECMAScript because Javascript was trademarked and apparently the alternatives were shit.</span>
+			</li>
+			<li>
+				Which organization was responsible for standardizing Javascript? { <span class="next rob-yellow">ECMA</span> }
+			</li>
+			<li>
+				What year did ES2 released? { <span class="next rob-yellow">1998</span> }
+				<span class="smaller-list-item"> fun fact - ES2 still didn't ship with exceptions, this meant the interpreter was left to handle any and all errors.</span>
+			</li>
 		</ol>
 	</section>
+
 	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
+		<h2>ECMAScript 3 - The Good Times - 1999</h2>
+		<ol class="next">
+			<li>Regular Expressions</li>
+			<li>Do While blocks</li>
+			<li>Exceptions with <span class="inline-code">try/catch</span>! </li>
+			<li>Tons more functions for strings and arrays!</li>
+			<li><span class="inline-code">in</span> and <span class="inline-code">instanceof</span> operators!</li>
+			<li>Real error handling</li>
+			<li>Fully supported across all major browsers</li>
+			<li class="next">...and most importantly it paved the way toward <span class="rob-yellow">AJAX</span></li>
+		</ol>
 	</section>
+
 	<section class="slide">
-		<h2>Code samples</h2>
+		<h2><span class="rainbow">Fun with Javascript</span></h2>
+		<p>Below console log will output >>> ({ <span class="next rob-yellow">3</span> })</p>
 		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+			<code>
+			  var items = [1, 2, 3];
+				for ( var x = 0; x < items.length; x++ ) {
+					var item = items[x];
+				}
+
+				console.log(item);
+	   </code>
 		</pre>
 	</section>
+
 	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
-	</section>
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<img src="pictures/picture.jpg" alt="" class="cover">
-		<style>
-			#picture h2 {
-				color:#FFF;
+		<h2>ECMAScript - 4 - The fuckit days.</h2>
+		<p class="">
+			What year was interest resparked in ES4? { <span class="next rob-yellow">2005</span> } ( the greatness of AJAX had been realised and interest sparked again )
+			<br>
+			Which 4 major companies sent representatives to discuss the feature set for ES4? ({ <span class="next rob-yellow"> Adobe, Mozilla, Opera, and Microsoft</span> }).
+			<br>
+			<style>
+				.small-list {
+					font-size: 12px;
+					line-height: 1;
 				}
-		</style>
+			</style>
+
+		</p>
+
+		<h4>Feature List</h4>
+
+		<ul class="double small-list next">
+			<li>{ <span class="next rob-yellow">Classes</span> } *hint: it's rob's most hated ES6 feature</li>
+			<li>Interfaces</li>
+			<li>Namespaces</li>
+			<li>Packages</li>
+			<li>Optional type annotations</li>
+			<li>Optional static type checking</li>
+			<li>Structural types</li>
+			<li>Type definitions</li>
+			<li>Multimethods</li>
+			<li>Parameterized types</li>
+			<li>Proper tail calls</li>
+			<li>Iterators</li>
+			<li>Generators</li>
+			<li>Instrospection</li>
+			<li>Type discriminating exception handlers</li>
+			<li>Constant bindings</li>
+			<li>Proper block scoping</li>
+			<li>Destructuring</li>
+			<li>Succint function expressions</li>
+			<li>Array comprehensions</li>
+		</ul>
 	</section>
+
+	<section class="slide">
+		<h2><span class="rainbow">Fun with Javascript!!!</span></h2>
+		<p>
+			Result ({  <span class="next rob-yellow">0</span> })
+		</p>
+		<pre>
+			<code>
+				// Outputs NaN
+				console.log(Math.min('null', 1234));
+
+				// Outputs 1
+				console.log(Math.min('1', 1234));
+
+				console.log(Math.min(null, 1234));
+				// Outputs ???
+			</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>ECMAScript - 4 - The fuckit days ( continued ).</h2>
+		<p class="">
+			With the feature set - ready enter our hero - { <span class="next rob-yellow">Douglas Crockford</span> }, the representative from ({ <span class="next rob-yellow">Yahoo</span> }).
+			*Hint: Rob mentioned him twice this morning, and mentioned the company once.
+			<br>
+			From which company was the representative that wanted to side with Douglas but couldn't? ({ <span class="next rob-yellow">Microsoft</span> })
+			<br>
+			*Hint: Representative agreed with him but couldn't say anything outright as his company would get flamed for being anti-competitive ( which would've been totally valid at the time ).
+			<br>
+		</p>
+	</section>
+
+	<section class="slide">
+		<h2>ECMAScript - 4</h2>
+		<p class="next">
+			After ({ <span class="next rob-yellow">8</span> }) years, the ES4 proposal was officially scrapped as it took far too long the complicated feature set.
+		</p>
+	</section>
+
+
+	<section class="slide">
+		<h2>ECMAScript - 4</h2>
+		<p class="next">
+			What year was ES4 Officially released? ({ <span class="next rob-yellow">Never</span> }).
+		</p>
+		<p class="next">
+			What year was ES5 Officially released? ({ <span class="next rob-yellow">2009</span> }).
+		</p>
+		<p class="next">
+			What year was ES6 Officially released? ({ <span class="next rob-yellow">2015</span> }).
+		</p>
+		<p class="next">
+			ES Harmony is a term often used, what could it mean? ({ <span class="next rob-yellow">ES Harmany was the middleground between 3.1 and 4</span> }).
+		</p>
+	</section>
+
+	<section class="slide">
+		<h2><span class="rainbow">Fun with Javascript!!!</span></h2>
+		<p>
+			Result ({  <span class="next rob-yellow">"function called"</span> })
+		</p>
+		<pre>
+			<code>
+				myFunction();
+
+				function myFunction() {
+					console.log("function called");
+				}
+
+				var myFunction = function () {
+					console.log("variable called");
+				}
+			</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2><span class="rainbow">Fun with Javascript!!!</span></h2>
+		<p>
+			Result ({  <span class="next rob-yellow">"variable called"</span> })
+		</p>
+		<pre>
+			<code>
+				function myFunction() {
+					console.log("function called");
+				}
+
+				var myFunction = function () {
+					console.log("variable called");
+				}
+
+				myFunction();
+			</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2><span class="rainbow">Fun with Javascript!!!</span></h2>
+		<div>
+			Result ({  <span class="next rob-yellow">pure awesomeness.</span> }) <span class="next">NOT... what is wrong in the below code?</span>
+		</div>
+		<div class="next">Correct! Object.assign is mutating array. Boom bitches.</div>
+		<pre>
+			<code>
+				// a lesson in immutable arrays
+				const array = ['Rob', 'Alcino', 'Chris', 'Siya', 'Barak', 'Gianluca'];
+
+				// now to add someone without mutating array
+				const index = 5; // where index that you want to mod
+
+				// Option One
+				const nextArray = [
+					...array.slice(0, index),
+					['Luca'],
+					...array.slice(index + 1),
+				]; // siya dislikes this option
+
+				// Option Two
+				const nextArrayV2 = Object.assign(array, {[index]: 'Gian'})
+			</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2><span class="rainbow">Fun with Javascript!!!</span></h2>
+		<div class="next">Answer to 1 : <span class="next rob-yellow">REDUCE</span> </span>
+		<span class="next">Answer to 2 : <span class="next rob-yellow">FILTER</span> </span>
+		<span class="next">Answer to 3 : <span class="next rob-yellow">REDUCE</span> </span>
+		</div>
+		<pre>
+			<code>
+				/*
+					Given the array methods Array.protoype.map | Array.prototype.filter | Array.prototype.reduce
+					Which one's should be used in each example below?
+				*/
+
+				// Given: An initial Array
+				// 1: You need to flatten a nested array
+				// 2: You need to return a new array that only contains strings longer than 5
+				// 3: You need to return a string that contains a JSON.stringify'd version
+					// of all the items
+			</code>
+		</pre>
+	</section>
+<!--
 	<section class="slide">
 		<h2 class="shout shrink">You can even shout this way</h2>
 	</section>
+
 	<section class="slide">
 		<h2>Inner navigation</h2>
 		<ol>
@@ -153,10 +341,12 @@
 			<li class="next">Nobody wants to see the same joke twice</li>
 		</ol>
 	</section>
+
 	<section class="slide grid">
 		<h2>All nicely aligned to grid</h2>
 	</section>
-	<section class="slide" id="see-more">
+ -->
+<!-- 	<section class="slide" id="see-more">
 		<h2 class="shout">
 			<img src="pictures/logo.svg" alt="Shower logo">
 			<a href="https://github.com/shower/shower">See more on GitHub</a>
@@ -171,16 +361,16 @@
 				}
 		</style>
 	</section>
-	<p class="badge">
+ -->
+	<footer class="badge">
 		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</p>
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
+	</footer>
+
 	<div class="progress"></div>
+
 	<script src="shower/shower.min.js"></script>
-	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
-	<!-- Photos by John Carey, fiftyfootshadows.net -->
+	<script src="node_modules/prismjs/prism.js"></script>
+	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+
 </body>
 </html>
